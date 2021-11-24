@@ -20,6 +20,8 @@
 		CEA50540274EF4B8005BE8D3 /* SearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		CEA50541274EF4B8005BE8D3 /* ImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		CEA50542274EF4B8005BE8D3 /* Binding+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Binding+Utils.swift"; sourceTree = "<group>"; };
+		CEA50547274EF590005BE8D3 /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		CEA50548274EF590005BE8D3 /* Changelog.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Changelog.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +38,8 @@
 		CEA5052A274EF4A4005BE8D3 = {
 			isa = PBXGroup;
 			children = (
+				CEA50548274EF590005BE8D3 /* Changelog.md */,
+				CEA50547274EF590005BE8D3 /* Package.swift */,
 				CEA50536274EF4A4005BE8D3 /* PrograManiacsSwiftUI */,
 				CEA50535274EF4A4005BE8D3 /* Products */,
 			);
