@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-extension Binding {
+public extension Binding {
     
     func onChange(_ handler: @escaping (Value) -> Void) -> Binding<Value> {
         Binding(
@@ -21,7 +21,7 @@ extension Binding {
     
 }
 
-extension UIApplication {
+public extension UIApplication {
     func endEditing(_ force: Bool) {
         self.windows
             .filter{$0.isKeyWindow}
@@ -30,22 +30,22 @@ extension UIApplication {
     }
 }
 
-struct ResignKeyboardOnDragGesture: ViewModifier {
+public struct ResignKeyboardOnDragGesture: ViewModifier {
     var gesture = DragGesture().onChanged{_ in
         UIApplication.shared.endEditing(true)
     }
-    func body(content: Content) -> some View {
+    public func body(content: Content) -> some View {
         content.gesture(gesture)
     }
 }
 
-extension View {
+public extension View {
     func resignKeyboardOnDragGesture() -> some View {
         return modifier(ResignKeyboardOnDragGesture())
     }
 }
 
-struct CacheImage {
+public struct CacheImage {
     
     public static let shared: CacheImage = .init()
     public let cache = NSCache<NSString, UIImage>()

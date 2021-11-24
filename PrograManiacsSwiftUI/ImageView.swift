@@ -8,7 +8,7 @@
 import SwiftUI
 import Combine
 
-class ImageLoader: ObservableObject {
+public class ImageLoader: ObservableObject {
     
     @Published var image = UIImage()
     
@@ -31,7 +31,7 @@ class ImageLoader: ObservableObject {
     
 }
 
-struct ImageView: View {
+public struct ImageView: View {
     
     @ObservedObject private var imageLoader: ImageLoader
     
@@ -39,7 +39,7 @@ struct ImageView: View {
         self.imageLoader = ImageLoader(urlString:url)
     }
     
-    var body: some View {
+    public var body: some View {
         Image(uiImage: self.imageLoader.image)
             .resizable()
     }
