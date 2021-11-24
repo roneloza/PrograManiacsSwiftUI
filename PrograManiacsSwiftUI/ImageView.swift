@@ -10,9 +10,9 @@ import Combine
 
 public class ImageLoader: ObservableObject {
     
-    @Published var image = UIImage()
+    @Published internal var image = UIImage()
     
-    init(urlString: String) {
+    public init(urlString: String) {
         if let image = CacheImage.shared.cache.object(forKey: urlString as NSString) {
             self.image = image
         } else {
@@ -35,7 +35,7 @@ public struct ImageView: View {
     
     @ObservedObject private var imageLoader: ImageLoader
     
-    init(withURL url:String) {
+    public init(withURL url:String) {
         self.imageLoader = ImageLoader(urlString:url)
     }
     

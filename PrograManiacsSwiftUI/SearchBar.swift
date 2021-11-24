@@ -9,7 +9,7 @@ import SwiftUI
 
 public struct SearchBar: View {
     
-    @Binding var text: String
+    @Binding public var text: String
     @State private var isEditing = false
     
     public var body: some View {
