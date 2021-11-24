@@ -8,12 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		CEA50539274EF4A4005BE8D3 /* PrograManiacsSwiftUI.h in Headers */ = {isa = PBXBuildFile; fileRef = CEA50537274EF4A4005BE8D3 /* PrograManiacsSwiftUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CEA50543274EF4B8005BE8D3 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA50540274EF4B8005BE8D3 /* SearchBar.swift */; };
+		CEA50544274EF4B8005BE8D3 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA50541274EF4B8005BE8D3 /* ImageView.swift */; };
+		CEA50545274EF4B8005BE8D3 /* Binding+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA50542274EF4B8005BE8D3 /* Binding+Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CEA50534274EF4A4005BE8D3 /* PrograManiacsSwiftUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PrograManiacsSwiftUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEA50537274EF4A4005BE8D3 /* PrograManiacsSwiftUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrograManiacsSwiftUI.h; sourceTree = "<group>"; };
 		CEA50538274EF4A4005BE8D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEA50540274EF4B8005BE8D3 /* SearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		CEA50541274EF4B8005BE8D3 /* ImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
+		CEA50542274EF4B8005BE8D3 /* Binding+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Binding+Utils.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +52,9 @@
 		CEA50536274EF4A4005BE8D3 /* PrograManiacsSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				CEA50542274EF4B8005BE8D3 /* Binding+Utils.swift */,
+				CEA50541274EF4B8005BE8D3 /* ImageView.swift */,
+				CEA50540274EF4B8005BE8D3 /* SearchBar.swift */,
 				CEA50537274EF4A4005BE8D3 /* PrograManiacsSwiftUI.h */,
 				CEA50538274EF4A4005BE8D3 /* Info.plist */,
 			);
@@ -94,6 +103,7 @@
 				TargetAttributes = {
 					CEA50533274EF4A4005BE8D3 = {
 						CreatedOnToolsVersion = 12.4;
+						LastSwiftMigration = 1240;
 					};
 				};
 			};
@@ -130,6 +140,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEA50544274EF4B8005BE8D3 /* ImageView.swift in Sources */,
+				CEA50543274EF4B8005BE8D3 /* SearchBar.swift in Sources */,
+				CEA50545274EF4B8005BE8D3 /* Binding+Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +274,7 @@
 		CEA5053D274EF4A4005BE8D3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -276,6 +290,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = io.roneshender.dev.PrograManiacsSwiftUI;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -284,6 +299,7 @@
 		CEA5053E274EF4A4005BE8D3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
