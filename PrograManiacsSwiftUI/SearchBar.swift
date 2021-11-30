@@ -55,4 +55,8 @@ public struct SearchBar: View {
         }
     }
     
+    public init(text: Binding<String>) {
+        self._text = text
+    }
+    
 }
