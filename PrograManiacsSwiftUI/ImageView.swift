@@ -57,3 +57,9 @@ public struct ImageView: View {
     }
     
 }
+
+struct ImageView_Previews: PreviewProvider {
+    static var previews: some View {
+        ImageView(withURL: "https://www.themoviedb.org/t/p/w220_and_h330_face/2CAL2433ZeIihfX1Hb2139CX0pW.jpg")
+    }
+}
