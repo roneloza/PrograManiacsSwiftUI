@@ -12,20 +12,28 @@ public class ImageLoader: ObservableObject {
     
     @Published internal var image = UIImage()
     
-    public init(urlString: String) {
-        if let image = CacheImage.shared.cache.object(forKey: urlString as NSString) {
-            self.image = image
-        } else {
-            guard let url = URL(string: urlString) else { return }
-            let task = URLSession.shared.dataTask(with: url) { data, response, error in
-                guard let data = data else { return }
-                let image = UIImage(data: data) ?? UIImage()
-                CacheImage.shared.cache.setObject(image, forKey: urlString as NSString)
-                DispatchQueue.main.async {
-                    self.image = image
-                }
+    public init(urlString: String,
+                completionGetImage: ((ImageLoader) -> Void)? = nil,
+                completionSetImage: ((Data) -> Void)? = nil) {
+        
+        guard let url = URL(string: urlString) else { return }
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+            var newData: Data = Data()
+            if let data = data {
+                newData = data
+                completionSetImage?(data)
+            } else {
+                completionGetImage?(self)
             }
-            task.resume()
+            let image = UIImage(data: newData) ?? UIImage()
+            self.setImage(image)
+        }
+        task.resume()
+    }
+    
+    public func setImage(_ image: UIImage) {
+        DispatchQueue.main.async {
+            self.image = image
         }
     }
     
@@ -35,8 +43,12 @@ public struct ImageView: View {
     
     @ObservedObject private var imageLoader: ImageLoader
     
-    public init(withURL url:String) {
-        self.imageLoader = ImageLoader(urlString:url)
+    public init(withURL urlString: String,
+                completionGetImage: ((ImageLoader) -> Void)? = nil,
+                completionSetImage: ((Data) -> Void)? = nil) {
+        self.imageLoader = ImageLoader(urlString: urlString,
+                                       completionGetImage: completionGetImage,
+                                       completionSetImage: completionSetImage)
     }
     
     public var body: some View {
