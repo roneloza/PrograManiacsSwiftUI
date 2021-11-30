@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+@available(iOS 14.0, *)
 public struct SearchBar: View {
     
     @Binding public var text: String
@@ -15,7 +16,8 @@ public struct SearchBar: View {
     public var body: some View {
         HStack {
             TextField("Search", text: $text)
-                .accessibilityIdentifier("searchBarTextField")
+                .accessibilityIdentifier("searchTextField")
+                .accessibilityLabel("searchTextField")
                 .padding(7)
                 .padding(.horizontal, 25)
                 .background(Color(.systemGray6))
@@ -34,7 +36,8 @@ public struct SearchBar: View {
                                     .foregroundColor(.gray)
                                     .padding(.trailing, 8)
                             }
-                            .accessibilityIdentifier("searchBarTextClearButton")
+                            .accessibilityLabel("searchClearButton")
+                            .accessibilityIdentifier("searchClearButton")
                         }
                     }
                 )
@@ -50,7 +53,8 @@ public struct SearchBar: View {
                 }) {
                     Text("Cancel")
                 }
-                .accessibilityIdentifier("searchBarTextCancelButton")
+                .accessibilityLabel("searchCancelButton")
+                .accessibilityIdentifier("searchCancelButton")
                 .padding(.trailing, 10)
                 .transition(.move(edge: .trailing))
                 .animation(.default)
